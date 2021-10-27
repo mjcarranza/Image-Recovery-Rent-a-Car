@@ -17,9 +17,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QString fileName;
+    QImage image;
+
+    void cut(int x,int y, int w, int h);
 
 private slots:
     void on_Open_triggered();
+
+    void on_Cut_triggered();
 
 private:
     Ui::MainWindow *ui;
