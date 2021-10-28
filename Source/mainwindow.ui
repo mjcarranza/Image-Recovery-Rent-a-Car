@@ -179,9 +179,8 @@ color: rgb(0, 0, 0);</string>
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="New"/>
     <addaction name="Open"/>
-    <addaction name="actionSave"/>
+    <addaction name="Save"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -205,7 +204,7 @@ color: rgb(0, 0, 0);</string>
     <string>Open</string>
    </property>
   </action>
-  <action name="actionSave">
+  <action name="Save">
    <property name="text">
     <string>Save</string>
    </property>
@@ -218,11 +217,6 @@ color: rgb(0, 0, 0);</string>
   <action name="Recover">
    <property name="text">
     <string>Recover</string>
-   </property>
-  </action>
-  <action name="New">
-   <property name="text">
-    <string>New</string>
    </property>
   </action>
   <action name="Show_previous_solutions">

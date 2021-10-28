@@ -9,14 +9,19 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Genetic.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    showgen.cpp
 
 HEADERS += \
-    mainwindow.h
+    Genetic.h \
+    mainwindow.h \
+    showgen.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    showgen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -27,6 +27,12 @@ private slots:
 
     void on_Cut_triggered();
 
+    void on_New_triggered();
+
+    void on_Recover_triggered();
+
+    void on_Show_previous_solutions_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

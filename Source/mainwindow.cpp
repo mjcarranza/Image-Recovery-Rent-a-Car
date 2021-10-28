@@ -22,7 +22,7 @@ void MainWindow::cut(int x, int y, int w, int h)
     for (int i=0; i<sizeX; i++) {
         for (int j=0; j<sizeY; j++) {
             if (i>=x && i<= x+w && j>=y && j<=y+h){
-                image.setPixel(i, j, qRgb(255,255,255));
+                image.setPixel(i, j, qRgb(155,155,155));
             }
         }
     }
@@ -97,5 +97,17 @@ void MainWindow::on_Cut_triggered()
         // send data to main window
         cut(x,y,w,h);
     }
+}
+
+
+void MainWindow::on_Recover_triggered()
+{
+    // call genetic class
+}
+
+
+void MainWindow::on_Show_previous_solutions_triggered()
+{
+
 }
 
