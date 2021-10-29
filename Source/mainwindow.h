@@ -17,8 +17,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    int sizeX = 675;
+    int sizeY = 450;
     QString fileName;
     QImage image;
+    QColor pixArray[675][450];
 
     void cut(int x,int y, int w, int h);
 

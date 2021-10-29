@@ -55,12 +55,14 @@ OBJECTS_DIR   = ./
 SOURCES       = ../ImageRecovery/Genetic.cpp \
 		../ImageRecovery/main.cpp \
 		../ImageRecovery/mainwindow.cpp \
-		../ImageRecovery/showgen.cpp moc_mainwindow.cpp \
+		../ImageRecovery/showgen.cpp \
+		../ImageRecovery/xmlgenerator.cpp moc_mainwindow.cpp \
 		moc_showgen.cpp
 OBJECTS       = Genetic.o \
 		main.o \
 		mainwindow.o \
 		showgen.o \
+		xmlgenerator.o \
 		moc_mainwindow.o \
 		moc_showgen.o
 DIST          = ../../../Qt/6.1.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -188,10 +190,12 @@ DIST          = ../../../Qt/6.1.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.1.2/gcc_64/mkspecs/features/lex.prf \
 		../ImageRecovery/ImageRecovery.pro ../ImageRecovery/Genetic.h \
 		../ImageRecovery/mainwindow.h \
-		../ImageRecovery/showgen.h ../ImageRecovery/Genetic.cpp \
+		../ImageRecovery/showgen.h \
+		../ImageRecovery/xmlgenerator.h ../ImageRecovery/Genetic.cpp \
 		../ImageRecovery/main.cpp \
 		../ImageRecovery/mainwindow.cpp \
-		../ImageRecovery/showgen.cpp
+		../ImageRecovery/showgen.cpp \
+		../ImageRecovery/xmlgenerator.cpp
 QMAKE_TARGET  = ImageRecovery
 DESTDIR       = 
 TARGET        = ImageRecovery
@@ -473,8 +477,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/6.1.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../ImageRecovery/Genetic.h ../ImageRecovery/mainwindow.h ../ImageRecovery/showgen.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ImageRecovery/Genetic.cpp ../ImageRecovery/main.cpp ../ImageRecovery/mainwindow.cpp ../ImageRecovery/showgen.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../ImageRecovery/Genetic.h ../ImageRecovery/mainwindow.h ../ImageRecovery/showgen.h ../ImageRecovery/xmlgenerator.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ImageRecovery/Genetic.cpp ../ImageRecovery/main.cpp ../ImageRecovery/mainwindow.cpp ../ImageRecovery/showgen.cpp ../ImageRecovery/xmlgenerator.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../ImageRecovery/mainwindow.ui ../ImageRecovery/showgen.ui $(DISTDIR)/
 
 
@@ -1272,8 +1276,43 @@ showgen.o: ../ImageRecovery/showgen.cpp ../ImageRecovery/showgen.h \
 		../../../Qt/6.1.2/gcc_64/include/QtCore/QSize \
 		../../../Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
 		../../../Qt/6.1.2/gcc_64/include/QtGui/QTransform \
-		ui_showgen.h
+		ui_showgen.h \
+		../../../Qt/6.1.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qpainter.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qpicture.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/6.1.2/gcc_64/include/QtWidgets/QSpacerItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o showgen.o ../ImageRecovery/showgen.cpp
+
+xmlgenerator.o: ../ImageRecovery/xmlgenerator.cpp ../ImageRecovery/xmlgenerator.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o xmlgenerator.o ../ImageRecovery/xmlgenerator.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

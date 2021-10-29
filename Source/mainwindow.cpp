@@ -16,15 +16,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::cut(int x, int y, int w, int h)
 {
-    int sizeX = 675;
-    int sizeY = 450;
+    int row = 0;
+    int col = 0;
     // recortar recuadro
     for (int i=0; i<sizeX; i++) {
         for (int j=0; j<sizeY; j++) {
-            if (i>=x && i<= x+w && j>=y && j<=y+h){
-                image.setPixel(i, j, qRgb(155,155,155));
+            if ((i>=x) && (i<x+w) && (j>=y) && (j<y+h)){
+
+                // get erased pixel colors (rgb)
+                QColor clrCurrent( image.pixel( i, j ) );
+                pixArray[row][col] = clrCurrent;
+                cout<<"("<<pixArray[row][col].red()<<", "<<pixArray[row][col].green()<<", "<<pixArray[row][col].blue()<<")"<<endl;
+
+                // set white color to pixel
+                image.setPixel(i, j, qRgb(255,255,255));
+                col ++;
+            }
+            if ((i>=x) && (i<x+w) && (j==y+h)){
+                row ++;
             }
         }
+        col = 0;
     }
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->addPixmap(QPixmap::fromImage(image));
@@ -100,13 +112,18 @@ void MainWindow::on_Cut_triggered()
 }
 
 
-void MainWindow::on_Recover_triggered()
+void MainWindow::on_Show_previous_solutions_triggered()
 {
     // call genetic class
+    int a =9; int b =8;
+    int c = a+b;
+    cout<<c<<endl;
+    cout<<"this is excecuting"<<endl;
+    cout<<"("<<pixArray[0][0].red()<<", "<<pixArray[0][0].green()<<", "<<pixArray[0][0].blue()<<")"<<endl;
 }
 
 
-void MainWindow::on_Show_previous_solutions_triggered()
+void MainWindow::on_Recover_triggered()
 {
 
 }

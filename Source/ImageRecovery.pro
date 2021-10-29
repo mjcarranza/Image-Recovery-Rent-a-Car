@@ -12,12 +12,14 @@ SOURCES += \
     Genetic.cpp \
     main.cpp \
     mainwindow.cpp \
-    showgen.cpp
+    showgen.cpp \
+    xmlgenerator.cpp
 
 HEADERS += \
     Genetic.h \
     mainwindow.h \
-    showgen.h
+    showgen.h \
+    xmlgenerator.h
 
 FORMS += \
     mainwindow.ui \
