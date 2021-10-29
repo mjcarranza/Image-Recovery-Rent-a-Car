@@ -25,12 +25,12 @@ class Ui_showgen
 {
 public:
     QGridLayout *gridLayout;
-    QGraphicsView *graphicsView;
+    QGraphicsView *genGrapcsView;
     QLabel *label;
     QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton_2;
+    QPushButton *previousBtn;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton;
+    QPushButton *nextBtn;
 
     void setupUi(QWidget *showgen)
     {
@@ -39,10 +39,10 @@ public:
         showgen->resize(579, 453);
         gridLayout = new QGridLayout(showgen);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        graphicsView = new QGraphicsView(showgen);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        genGrapcsView = new QGraphicsView(showgen);
+        genGrapcsView->setObjectName(QString::fromUtf8("genGrapcsView"));
 
-        gridLayout->addWidget(graphicsView, 1, 0, 1, 1);
+        gridLayout->addWidget(genGrapcsView, 1, 0, 1, 1);
 
         label = new QLabel(showgen);
         label->setObjectName(QString::fromUtf8("label"));
@@ -53,25 +53,25 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        pushButton_2 = new QPushButton(showgen);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setStyleSheet(QString::fromUtf8("font: 57 11pt \"aakar\";\n"
+        previousBtn = new QPushButton(showgen);
+        previousBtn->setObjectName(QString::fromUtf8("previousBtn"));
+        previousBtn->setStyleSheet(QString::fromUtf8("font: 57 11pt \"aakar\";\n"
 "color: rgb(0, 0, 0);\n"
 "background-color: rgb(238, 238, 236);"));
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(previousBtn);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton = new QPushButton(showgen);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setStyleSheet(QString::fromUtf8("font: 57 11pt \"aakar\";\n"
+        nextBtn = new QPushButton(showgen);
+        nextBtn->setObjectName(QString::fromUtf8("nextBtn"));
+        nextBtn->setStyleSheet(QString::fromUtf8("font: 57 11pt \"aakar\";\n"
 "background-color: rgb(238, 238, 236);\n"
 "color: rgb(0, 0, 0);"));
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(nextBtn);
 
 
         gridLayout->addLayout(horizontalLayout, 4, 0, 1, 1);
@@ -86,8 +86,8 @@ public:
     {
         showgen->setWindowTitle(QCoreApplication::translate("showgen", "Form", nullptr));
         label->setText(QCoreApplication::translate("showgen", "Previous Generations...", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("showgen", "Previous", nullptr));
-        pushButton->setText(QCoreApplication::translate("showgen", "Next", nullptr));
+        previousBtn->setText(QCoreApplication::translate("showgen", "Previous", nullptr));
+        nextBtn->setText(QCoreApplication::translate("showgen", "Next", nullptr));
     } // retranslateUi
 
 };

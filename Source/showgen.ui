@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
-    <widget class="QGraphicsView" name="graphicsView"/>
+    <widget class="QGraphicsView" name="genGrapcsView"/>
    </item>
    <item row="0" column="0">
     <widget class="QLabel" name="label">
@@ -31,7 +31,7 @@ color: rgb(0, 0, 0);</string>
    <item row="4" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="previousBtn">
        <property name="styleSheet">
         <string notr="true">font: 57 11pt &quot;aakar&quot;;
 color: rgb(0, 0, 0);
@@ -56,7 +56,7 @@ background-color: rgb(238, 238, 236);</string>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="nextBtn">
        <property name="styleSheet">
         <string notr="true">font: 57 11pt &quot;aakar&quot;;
 background-color: rgb(238, 238, 236);

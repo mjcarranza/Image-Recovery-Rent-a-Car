@@ -16,9 +16,8 @@ public:
     ~showgen();
 
 private slots:
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_clicked();
+    void on_previousBtn_clicked();
+    void on_nextBtn_clicked();
 
 private:
     Ui::showgen *ui;

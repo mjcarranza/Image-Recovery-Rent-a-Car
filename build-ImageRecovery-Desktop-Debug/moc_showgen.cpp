@@ -23,20 +23,20 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_showgen_t {
     const uint offsetsAndSize[8];
-    char stringdata0[55];
+    char stringdata0[51];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_showgen_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_showgen_t qt_meta_stringdata_showgen = {
     {
 QT_MOC_LITERAL(0, 7), // "showgen"
-QT_MOC_LITERAL(8, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(32, 0), // ""
-QT_MOC_LITERAL(33, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(8, 22), // "on_previousBtn_clicked"
+QT_MOC_LITERAL(31, 0), // ""
+QT_MOC_LITERAL(32, 18) // "on_nextBtn_clicked"
 
     },
-    "showgen\0on_pushButton_2_clicked\0\0"
-    "on_pushButton_clicked"
+    "showgen\0on_previousBtn_clicked\0\0"
+    "on_nextBtn_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,8 +70,8 @@ void showgen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         auto *_t = static_cast<showgen *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_pushButton_2_clicked(); break;
-        case 1: _t->on_pushButton_clicked(); break;
+        case 0: _t->on_previousBtn_clicked(); break;
+        case 1: _t->on_nextBtn_clicked(); break;
         default: ;
         }
     }

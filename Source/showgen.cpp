@@ -13,12 +13,12 @@ showgen::~showgen()
     delete ui;
 }
 
-void showgen::on_pushButton_2_clicked()
+void showgen::on_previousBtn_clicked()
 {
 
 }
 
-void showgen::on_pushButton_clicked()
+void showgen::on_nextBtn_clicked()
 {
 
 }

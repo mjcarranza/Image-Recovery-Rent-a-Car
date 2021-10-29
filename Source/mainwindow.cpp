@@ -1,19 +1,33 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QMessageBox"
+#include "Genetic.h"
 
+
+/**
+ * @brief MainWindow::MainWindow ui constructor
+ * @param parent
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
-
+/**
+ * @brief MainWindow::~MainWindow Destructor of the ui
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+/**
+ * @brief MainWindow::cut cut the loaded image
+ * @param x x position indicates where to start cutting in x axes
+ * @param y y position indicates where to start cutting in y axes
+ * @param w width of the cutting rectangle
+ * @param h heigh of the cuuting rectangle
+ */
 void MainWindow::cut(int x, int y, int w, int h)
 {
     int row = 0;
@@ -42,23 +56,30 @@ void MainWindow::cut(int x, int y, int w, int h)
     scene->addPixmap(QPixmap::fromImage(image));
     ui->graphicsView->setScene(scene);
 }
-
+/**
+ * @brief MainWindow::on_Open_triggered open an image
+ */
 void MainWindow::on_Open_triggered()
 {
-    // path to the file
+    // gets the path to the file
     fileName = QFileDialog::getOpenFileName(this,"Open File","","Text File(*.jpg)");
 
+    // creates a new image
     image = QImage(fileName);
 
+    // create a new scene to show the loaded image
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->addPixmap(QPixmap::fromImage(image));
     ui->graphicsView->setScene(scene);
 }
 
-
+/**
+ * @brief MainWindow::on_Cut_triggered cuts the selected section
+ */
 void MainWindow::on_Cut_triggered()
 {
-     QMessageBox* msg;
+    // message in case a cutting parameter is empty
+    QMessageBox* msg;
 
     // get text from each line edit
     QString xline = ui->xlineEdit->text();
@@ -78,6 +99,7 @@ void MainWindow::on_Cut_triggered()
     msg->setIcon(QMessageBox::Warning);
     msg->setStyleSheet("background-color: rgb(0, 0, 0); color: red");
 
+    // show message if value is invalid
     if(xstr==""){
         msg->setText("X Cutting Value Required!");
         msg->show();
@@ -101,30 +123,43 @@ void MainWindow::on_Cut_triggered()
         int w = stoi(wstr);
         int h = stoi(hstr);
 
-        ui->xlineEdit->setText("");
-        ui->ylineEdit->setText("");
-        ui->wlineEdit->setText("");
-        ui->hlineEdit->setText("");
+        // save width and heigh cutting values
+        width = w;
+        heigh = h;
 
-        // send data to main window
-        cut(x,y,w,h);
+        if (w>500){
+            msg->setText("The maximun value for width is 500!");
+            msg->show();
+        }
+        else if (h>500){
+            msg->setText("The maximun value for height is 500!");
+            msg->show();
+        }
+        else{
+            // erase the inserted values
+            ui->xlineEdit->setText("");
+            ui->ylineEdit->setText("");
+            ui->wlineEdit->setText("");
+            ui->hlineEdit->setText("");
+
+            // send data to main window
+            cut(x,y,w,h);
+        }
     }
 }
 
-
+/**
+ * @brief MainWindow::on_Show_previous_solutions_triggered shows the previous generations created by the genetic algorithm
+ */
 void MainWindow::on_Show_previous_solutions_triggered()
 {
     // call genetic class
-    int a =9; int b =8;
-    int c = a+b;
-    cout<<c<<endl;
-    cout<<"this is excecuting"<<endl;
-    cout<<"("<<pixArray[0][0].red()<<", "<<pixArray[0][0].green()<<", "<<pixArray[0][0].blue()<<")"<<endl;
 }
 
-
+/**
+ * @brief MainWindow::on_Recover_triggered recover the deleted image
+ */
 void MainWindow::on_Recover_triggered()
 {
 
 }
-
