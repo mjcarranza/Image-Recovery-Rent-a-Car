@@ -33,8 +33,8 @@ void MainWindow::cut(int x, int y, int w, int h)
     int row = 0;
     int col = 0;
     // recortar recuadro
-    for (int i=0; i<sizeX; i++) {
-        for (int j=0; j<sizeY; j++) {
+    for (int i=0; i<sizeY; i++) {
+        for (int j=0; j<sizeX; j++) {
             if ((i>=x) && (i<x+w) && (j>=y) && (j<y+h)){
 
                 // get erased pixel colors (rgb)
@@ -55,6 +55,11 @@ void MainWindow::cut(int x, int y, int w, int h)
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->addPixmap(QPixmap::fromImage(image));
     ui->graphicsView->setScene(scene);
+}
+
+QColor MainWindow::getpixel(int i, int j)
+{
+    return pixArray[i][j];
 }
 /**
  * @brief MainWindow::on_Open_triggered open an image
@@ -161,5 +166,5 @@ void MainWindow::on_Show_previous_solutions_triggered()
  */
 void MainWindow::on_Recover_triggered()
 {
-
+    // generate population(width, height)
 }

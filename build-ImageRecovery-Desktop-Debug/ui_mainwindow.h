@@ -63,6 +63,7 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(695, 675);
         MainWindow->setMaximumSize(QSize(700, 675));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(136, 138, 133);"));
         Open = new QAction(MainWindow);
         Open->setObjectName(QString::fromUtf8("Open"));
         Save = new QAction(MainWindow);
@@ -81,6 +82,7 @@ public:
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setMinimumSize(QSize(675, 460));
         graphicsView->setMaximumSize(QSize(675, 460));
+        graphicsView->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 238, 236);"));
 
         verticalLayout->addWidget(graphicsView);
 
@@ -122,16 +124,19 @@ public:
 
         wlineEdit = new QLineEdit(centralwidget);
         wlineEdit->setObjectName(QString::fromUtf8("wlineEdit"));
+        wlineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(wlineEdit, 2, 3, 1, 1);
 
         ylineEdit = new QLineEdit(centralwidget);
         ylineEdit->setObjectName(QString::fromUtf8("ylineEdit"));
+        ylineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(ylineEdit, 1, 3, 1, 1);
 
         hlineEdit = new QLineEdit(centralwidget);
         hlineEdit->setObjectName(QString::fromUtf8("hlineEdit"));
+        hlineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(hlineEdit, 3, 3, 1, 1);
 
@@ -148,6 +153,7 @@ public:
 
         xlineEdit = new QLineEdit(centralwidget);
         xlineEdit->setObjectName(QString::fromUtf8("xlineEdit"));
+        xlineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(xlineEdit, 0, 3, 1, 1);
 

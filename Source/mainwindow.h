@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QFileDialog>
 #include <iostream>
-#include "Genetic.h"
 
 using namespace std;
 
@@ -20,7 +19,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 // public variables and methos
 public:
-    Genetic *gen = new Genetic();
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -33,6 +31,7 @@ public:
     QColor pixArray[500][500];
 
     void cut(int x,int y, int w, int h);
+    QColor getpixel(int i,int j);
 
 // private slots
 private slots:

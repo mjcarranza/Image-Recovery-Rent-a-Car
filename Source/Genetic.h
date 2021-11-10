@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <QColor>
+#include <cmath>
 using namespace std;
 
 /**
@@ -13,19 +14,34 @@ class Genetic
 public:
     int width = 0;
     int heigh = 0;
+    QColor first, second, newCross, newMut, newInv;
+    QColor colorArray[300][300];
+    QColor ideal[300][300];
+    int fitness[300][300];
+    int selecArray[300][300];
+    int sumaColor = 0;
+    int sumaIdeal = 0;
+    int pop = 0;
+    int cruce = 0;
+    int mut = 0;
+    int inv = 0;
+    int contSelect = 0;
+    bool stop = false;
 
-    Genetic();
-
-    // sabiendo que el array no va a crecer mas alla de los valores de w y h, usar esas dimensiones en los bucles
-    QColor arr[500][500];
-
+    Genetic(int w, int h){
+        this->width = w;
+        this->heigh = h;
+    }
     void GeneratePopulation(int w, int h);
-    void Fitness(int w, int h);
-    void Select(int w, int h);
-    void Cross(int w, int h);
-    void mutate(int w, int h);
-    void Ivert(int w, int h);
+    void Fitness();
+    void Select();
+    void Cross();
+    void mutate();
+    void invert();
     int randomNumber();
+    void fillIdeal(int row, int col, QColor color);
+    void stopRunning();
+    void keepRunnig();
 
 };
 
