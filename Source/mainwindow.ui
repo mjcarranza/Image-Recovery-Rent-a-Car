@@ -215,7 +215,8 @@ color: rgb(0, 0, 0);</string>
      <string>Tools</string>
     </property>
     <addaction name="Recover"/>
-    <addaction name="Show_previous_solutions"/>
+    <addaction name="Keep_Recovering"/>
+    <addaction name="Show_Current_Solution"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -241,9 +242,14 @@ color: rgb(0, 0, 0);</string>
     <string>Recover</string>
    </property>
   </action>
-  <action name="Show_previous_solutions">
+  <action name="Keep_Recovering">
    <property name="text">
-    <string>Show previous solutions</string>
+    <string>Keep Recovering</string>
+   </property>
+  </action>
+  <action name="Show_Current_Solution">
+   <property name="text">
+    <string>Show Current Solution</string>
    </property>
   </action>
  </widget>

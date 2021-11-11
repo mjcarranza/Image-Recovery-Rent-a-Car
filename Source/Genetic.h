@@ -14,6 +14,8 @@ class Genetic
 public:
     int width = 0;
     int heigh = 0;
+    int xPos = 0;
+    int yPos = 0;
     QColor first, second, newCross, newMut, newInv;
     QColor colorArray[300][300];
     QColor ideal[300][300];
@@ -26,11 +28,13 @@ public:
     int mut = 0;
     int inv = 0;
     int contSelect = 0;
-    bool stop = false;
+    int stop;
 
-    Genetic(int w, int h){
+    Genetic(int w, int h, int x, int y){
         this->width = w;
         this->heigh = h;
+        this->xPos = x;
+        this->yPos = y;
     }
     void GeneratePopulation(int w, int h);
     void Fitness();
@@ -39,9 +43,9 @@ public:
     void mutate();
     void invert();
     int randomNumber();
-    void fillIdeal(int row, int col, QColor color);
-    void stopRunning();
+    void fillIdeal(int i, int j, int r, int g, int b);
     void keepRunnig();
+    int finalResult(int i, int j, int r, int g, int b);
 
 };
 

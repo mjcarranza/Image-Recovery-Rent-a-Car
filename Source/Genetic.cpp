@@ -1,4 +1,5 @@
 #include "Genetic.h"
+#include "mainwindow.h"
 
 /**
  * @brief Genetic::GeneratePopulation function to create a generation
@@ -7,12 +8,17 @@
  */
 void Genetic::GeneratePopulation(int w, int h)
 {
+    pop =1;
+    cruce =0;
+    mut =0;
+    inv =0;
     for (int i=0; i<h; i++){
         for (int j=0; j<w; j++){
             int rand1 = randomNumber();
             int rand2 = randomNumber();
             int rand3 = randomNumber();
             colorArray[i][j]= QColor(rand1,rand2,rand3);
+            cout<<"suma de colores "<<rand1+rand2+rand3<<endl;
         }
     }
     Fitness();
@@ -22,10 +28,14 @@ void Genetic::GeneratePopulation(int w, int h)
  */
 void Genetic::Fitness()
 {
-    while (stop == false) {
+    MainWindow mainw;
+    stop = 1000;
+    while (stop > 0) {
+        stop--;
         // mostrar o guardar la poblacion actual y generar el XML
-
+        cout<< "ALGORITHM RUNNING!!!!"<< endl;
         for (int i=0; i<width; i++){
+            cout<<"calculando fitness"<< endl;
             for (int j=0; j<heigh; j++){
                 sumaColor = colorArray[i][j].red() + colorArray[i][j].green() + colorArray[i][j].blue();
                 sumaIdeal = ideal[i][j].red() + ideal[i][j].green() + ideal[i][j].blue();
@@ -33,7 +43,10 @@ void Genetic::Fitness()
             }
         }
         Select();
+        // Evaluate if the current population is a solution
     }
+    //mostrar mensaje de que se termino
+    mainw.endProcess();
 }
 /**
  * @brief Genetic::Select function to select the best individuals of the population
@@ -183,34 +196,47 @@ int Genetic::randomNumber()
       first = false;
    }
    if (pop == 1){
-       return 1 + rand() % (( 255 + 1 ) - 1);
+       return rand() % (255);
    }
    else if(cruce == 1){
-       return 1 + rand() % (( 4 + 1 ) - 1);
+       return 1 + rand() % (4);
    }
    else if(mut == 1){
-       return rand() % (( 255 + 1 ) - 1);
+       return rand() % (255);
    }
    else if(inv == 1){
-       return 1 + rand() % (( 1000 + 1 ) - 1);
+       return rand() % (1000);
    }
    else{
-       return 1 + rand() % (( 2 + 1 ) - 1);
+       return 1+rand() % (2);
    }
 }
 
-void Genetic::fillIdeal(int row, int col, QColor color)
+void Genetic::fillIdeal(int i, int j, int r, int g, int b)
 {
-    ideal[row][col] = color;
+    ideal[i][j] = QColor(r,g,b);
+    cout<< "Color ideal> ("<<ideal[i][j].red()<<", "<<ideal[i][j].green()<<", "<<ideal[i][j].blue()<<")"<<endl;
 }
 
-void Genetic::stopRunning()
-{
-    stop = true;
-}
 
 void Genetic::keepRunnig()
 {
     stop = false;
     Fitness();
+}
+
+int Genetic::finalResult(int i, int j, int r, int g, int b)
+{
+    int redVal = colorArray[i][j].red();
+    int greenVal = colorArray[i][j].green();
+    int blueVal = colorArray[i][j].blue();
+    if (r==1){
+        return redVal;
+    }
+    else if (g==1) {
+        return greenVal;
+    }
+    else {
+        return blueVal;
+    }
 }

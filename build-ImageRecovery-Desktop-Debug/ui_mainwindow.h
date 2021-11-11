@@ -33,7 +33,8 @@ public:
     QAction *Save;
     QAction *Cut;
     QAction *Recover;
-    QAction *Show_previous_solutions;
+    QAction *Keep_Recovering;
+    QAction *Show_Current_Solution;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QGraphicsView *graphicsView;
@@ -72,8 +73,10 @@ public:
         Cut->setObjectName(QString::fromUtf8("Cut"));
         Recover = new QAction(MainWindow);
         Recover->setObjectName(QString::fromUtf8("Recover"));
-        Show_previous_solutions = new QAction(MainWindow);
-        Show_previous_solutions->setObjectName(QString::fromUtf8("Show_previous_solutions"));
+        Keep_Recovering = new QAction(MainWindow);
+        Keep_Recovering->setObjectName(QString::fromUtf8("Keep_Recovering"));
+        Show_Current_Solution = new QAction(MainWindow);
+        Show_Current_Solution->setObjectName(QString::fromUtf8("Show_Current_Solution"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -190,7 +193,8 @@ public:
         menuFile->addAction(Save);
         menuEdit->addAction(Cut);
         menuTools->addAction(Recover);
-        menuTools->addAction(Show_previous_solutions);
+        menuTools->addAction(Keep_Recovering);
+        menuTools->addAction(Show_Current_Solution);
 
         retranslateUi(MainWindow);
 
@@ -204,7 +208,8 @@ public:
         Save->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
         Cut->setText(QCoreApplication::translate("MainWindow", "Cut", nullptr));
         Recover->setText(QCoreApplication::translate("MainWindow", "Recover", nullptr));
-        Show_previous_solutions->setText(QCoreApplication::translate("MainWindow", "Show previous solutions", nullptr));
+        Keep_Recovering->setText(QCoreApplication::translate("MainWindow", "Keep Recovering", nullptr));
+        Show_Current_Solution->setText(QCoreApplication::translate("MainWindow", "Show Current Solution", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "CUTTING DIMENTIONS:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Position Y", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "High", nullptr));

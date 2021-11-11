@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "QMessageBox"
 #include "Genetic.h"
-
+Genetic *gen;
 
 /**
  * @brief MainWindow::MainWindow ui constructor
@@ -57,9 +57,29 @@ void MainWindow::cut(int x, int y, int w, int h)
     ui->graphicsView->setScene(scene);
 }
 
-QColor MainWindow::getpixel(int i, int j)
+void MainWindow::showSolution(int i, int j, int r, int g, int b)
 {
-    return pixArray[i][j];
+    red = r;
+    green = g;
+    blue = b;
+    xPos = i;
+    yPos =j;
+    cout<<xPos<<","<<yPos<<endl;
+    QColor clrCurr( image.pixel( 10, 10 ) );
+    cout << clrCurr.red();
+    image.setPixel(10, 10, qRgb(45,164,200));
+}
+
+void MainWindow::endProcess()
+{
+    QMessageBox* msg;
+    msg = new QMessageBox();
+    msg->setWindowTitle("INFORMATION");
+    msg->setIcon(QMessageBox::Warning);
+    msg->setStyleSheet("background-color: rgb(0, 0, 0); color: red");
+    msg->setText("Process Finished!");
+    msg->show();
+
 }
 /**
  * @brief MainWindow::on_Open_triggered open an image
@@ -123,10 +143,12 @@ void MainWindow::on_Cut_triggered()
     }
     else{
         // convert to integer data type
-        int x = stoi(xstr);
-        int y = stoi(ystr);
+        xPos = stoi(xstr);
+        yPos = stoi(ystr);
         int w = stoi(wstr);
+        width = w;
         int h = stoi(hstr);
+        heigh = h;
 
         // save width and heigh cutting values
         width = w;
@@ -148,17 +170,9 @@ void MainWindow::on_Cut_triggered()
             ui->hlineEdit->setText("");
 
             // send data to main window
-            cut(x,y,w,h);
+            cut(xPos,yPos,w,h);
         }
     }
-}
-
-/**
- * @brief MainWindow::on_Show_previous_solutions_triggered shows the previous generations created by the genetic algorithm
- */
-void MainWindow::on_Show_previous_solutions_triggered()
-{
-    // call genetic class
 }
 
 /**
@@ -166,5 +180,60 @@ void MainWindow::on_Show_previous_solutions_triggered()
  */
 void MainWindow::on_Recover_triggered()
 {
-    // generate population(width, height)
+    // generate population
+    cout<<xPos<<","<<yPos<<endl;
+    gen = new Genetic(width, heigh, xPos, yPos);
+
+    // call genetic class
+    for (int i=0; i<width; i++){
+        for (int j=0; j<heigh; j++){
+            gen->fillIdeal(i,j,pixArray[i][j].red(),pixArray[i][j].green(), pixArray[i][j].blue());
+        }
+    }
+
+    gen->GeneratePopulation(width, heigh);
 }
+
+
+
+void MainWindow::on_Keep_Recovering_triggered()
+{
+    cout<<"activado111";
+    gen->Fitness();
+}
+
+
+//void MainWindow::on_Current_Solution_triggered()
+//{
+//    cout<<"activado";
+//    QColor clrCurr( image.pixel( 0, 0 ) );
+//    cout<<clrCurr.red();
+//    //gen->finalResult();
+//}
+
+
+void MainWindow::on_Show_Current_Solution_triggered()
+{
+    int row = 0;
+    int col = 0;
+    for (int i=0; i<sizeY; i++) {
+        for (int j=0; j<sizeX; j++) {
+            if ((i>=xPos) && (i<xPos+width) && (j>=yPos) && (j<yPos+heigh)){
+                // set color to pixel
+                int redVal = gen->finalResult(row,col,1,0,0);
+                int greenVal = gen->finalResult(row,col,0,1,0);
+                int blueVal = gen->finalResult(row,col,0,0,1);
+                image.setPixel(i, j, qRgb(redVal,greenVal,blueVal));
+                col ++;
+            }
+            if ((i>=xPos) && (i<xPos+width) && (j==yPos+heigh)){
+                row ++;
+            }
+        }
+        col = 0;
+    }
+    QGraphicsScene *scene = new QGraphicsScene(this);
+    scene->addPixmap(QPixmap::fromImage(image));
+    ui->graphicsView->setScene(scene);
+}
+

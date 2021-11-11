@@ -26,19 +26,26 @@ public:
     int sizeY = 450;
     int width;
     int heigh;
+    int xPos = 0;
+    int yPos = 0;
+    int red = 0;
+    int green = 0;
+    int blue = 0;
     QString fileName;
     QImage image;
     QColor pixArray[500][500];
 
     void cut(int x,int y, int w, int h);
-    QColor getpixel(int i,int j);
+    void showSolution(int i, int j, int r, int g, int b);
+    void endProcess();
 
 // private slots
 private slots:
     void on_Open_triggered();
     void on_Cut_triggered();
     void on_Recover_triggered();
-    void on_Show_previous_solutions_triggered();
+    void on_Keep_Recovering_triggered();
+    void on_Show_Current_Solution_triggered();
 
 private:
     Ui::MainWindow *ui;
