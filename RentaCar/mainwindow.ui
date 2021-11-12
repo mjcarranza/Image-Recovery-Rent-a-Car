@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="Crear_Grafo">
     <property name="geometry">
      <rect>
       <x>1170</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Crear Grafo</string>
     </property>
    </widget>
    <widget class="QGraphicsView" name="Lienso">
@@ -38,6 +38,62 @@
       <width>1161</width>
       <height>601</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TargetG">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>150</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="SourceG">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>110</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Buscar_Ruta">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>80</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Buscar ruta</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="n_grafo">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>40</y>
+      <width>71</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>270</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
     </property>
    </widget>
   </widget>

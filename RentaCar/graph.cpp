@@ -36,7 +36,7 @@ void graph::createEdgesAndMatriz(int n){
         r1 = (rand() % ( n ));
         r2 = (rand() % ( n ));
         v = (rand()%(9)) +1 ;
-        if(relationNotExist( r1,  r2 )){
+        if(relationNotExist( r1,  r2 ) ){//&& r1!=r2
             cout<<r1;
             cout<<r2;
             cout<<v;

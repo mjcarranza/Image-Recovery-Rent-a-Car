@@ -7,50 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    scene = new QGraphicsScene(this);
 
-  //  QPushButton *train_button = new QPushButton(this);
-   // train_button->setText(tr("something"));
-   // train_button->move(0, 0);
-  //  setCentralWidget(train_button);
-
-    int DIAMETER = 50;
-
-    int PosX = 0;
-    int PosY = 0;
-    int PosX2 = 250;
-    int PosY2 = 100;
-    QGraphicsEllipseItem *circle = new QGraphicsEllipseItem(PosX , PosY, DIAMETER, DIAMETER);
-   // circle->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
-    circle->setBrush(Qt::green);
-    QGraphicsSimpleTextItem *text = new QGraphicsSimpleTextItem("A",circle);
-    QFont f;
-    f.setPointSize(25);
-    text->setFont(f);
-    text->setPos(15,0);
-
-    cout<<circle->x();
-
-    circle->scenePos();
-
-
-
-    QGraphicsLineItem *path;
-    path = new QGraphicsLineItem;
-    path->setLine (PosX+25, PosY+25,PosX2, PosY2);
-    ui->Lienso->setScene(scene);
-
-    QGraphicsSimpleTextItem *peso = new QGraphicsSimpleTextItem("30");
-    QFont fv;
-    fv.setPointSize(15);
-    peso->setFont(fv);
-    peso->setPos((PosX+25+PosX2)/2,(PosY+25+PosY2)/2);
-
-    scene->addItem(path);
-
-    scene->addItem(circle);
-
-    scene->addItem(peso);
 
 
 
@@ -69,35 +26,86 @@ MainWindow::~MainWindow()
 
 
 void MainWindow::createGrafic(){
-    int PosX;
-    int PosY;
+
+
+    scene = new QGraphicsScene(this);
+
     int DIAMETER = 50;
-    int n = 500;
+
+    int PosX= -250;
+    int PosY = -250;
+    int PosX2 = 250;
+    int PosY2 = 100;
     QString x;
     QChar y;
-  //  QGraphicsEllipseItem *circle;
-    QGraphicsSimpleTextItem *text;
-    for(int i = 0; i< (*Grafo).nodes.size(); i++){
-        PosX = (rand() % ( n ));
-        PosY = (rand() % ( n ));
-        this->nodesG.push_back(new QGraphicsEllipseItem(PosX , PosY, DIAMETER, DIAMETER));
-        nodesG[i]->setBrush(Qt::green);
-
-        x="";
-        y=(*Grafo).nodes[i];
-        x+=y;
+    int n = 800;
+    QPoint point;
+    vector<QPoint>nodospos;
 
 
-        text = new QGraphicsSimpleTextItem(x,nodesG[i]);
-        QFont f;
-        f.setPointSize(25);
-        text->setFont(f);
-        text->setPos(15,0);
+            QGraphicsEllipseItem *circle;
+            QGraphicsSimpleTextItem *text;
+            srand (time(NULL));
+            for(int i = 0 ; i<(*Grafo).nodes.size(); i++){
+                PosX = (rand() % ( n ));
+                PosY = (rand() % ( n ));
+                circle = new QGraphicsEllipseItem(PosX , PosY, DIAMETER, DIAMETER);
+                circle->setBrush(Qt::green);
+
+                point.setX(PosX);
+                point.setY(PosY);
+                nodospos.push_back(point);
+
+                x="";
+                y=(*Grafo).nodes[i];
+                x=x+y;
+
+                text= new QGraphicsSimpleTextItem(x,circle);
+                QFont f;
+                f.setPointSize(25);
+                text->setFont(f);
+                text->setPos(PosX+15,PosY);
+
+                this->nodesG.push_back(&*circle);
+              //  PosX = PosX+20;
+
+            }
+
+         //   nodesG[0]->setBrush(Qt::blue);
 
 
-        scene->addItem(nodesG[i]);
+            QGraphicsLineItem *path;
+            QGraphicsSimpleTextItem *peso;
+            for (int j = 0; j<(*Grafo).edges.size(); j++){
+                PosX= (nodospos[(*Grafo).getposNode((*Grafo).edges[j].SnodeName)]).x();
+                PosY = (nodospos[(*Grafo).getposNode((*Grafo).edges[j].SnodeName)]).y();
 
-    }
+                PosX2 = (nodospos[(*Grafo).getposNode((*Grafo).edges[j].TnodeName)]).x();
+                PosY2 = (nodospos[(*Grafo).getposNode((*Grafo).edges[j].TnodeName)]).y();
+
+            path = new QGraphicsLineItem;
+            path->setLine (PosX+25, PosY+25,PosX2+25, PosY2+25);
+
+            QString str = QString::fromStdString(to_string((*Grafo).edges[j].value));
+
+
+            peso = new QGraphicsSimpleTextItem(str);
+            QFont fv;
+            fv.setPointSize(15);
+            peso->setFont(fv);
+            peso->setPos((PosX+PosX2)/2,(PosY+PosY2)/2);
+            scene->addItem(path);
+            scene->addItem(peso);
+            }
+
+            for(int k = 0 ; k<nodesG.size(); k++){
+                scene->addItem(nodesG[k]);
+            }
+
+          //  scene->addItem(circle);
+
+
+            ui->Lienso->setScene(scene);
 
 
 
@@ -106,11 +114,8 @@ void MainWindow::createGrafic(){
 
 
 void MainWindow::CreateGraph(int n){
-//Grafo = new graph(n);
+Grafo = new graph(n);
 
-
-
-//createGafic(&Grafo);
 
 
 }
@@ -135,6 +140,9 @@ void MainWindow::BestPath(char source, char target){
     for(int i = 0; i < Bestpath.size() ; i++){
         cout<<"prueba2"<<endl;
         cout<<Bestpath[i]<<endl;
+        change_to_yellow((*Grafo).getnodePos(i) );
+
+        Sleep(1000);
     }
 
      cout<<"prueba2"<<endl;
@@ -146,7 +154,8 @@ void updateMin(vector<char> *Bestpath,int *Best,vector<char> *path,int *Temp){
     if (*Temp<*Best){
         *Bestpath = *path;
         *Best = *Temp;
-    }
+    }(*path).pop_back();
+
 
 
 }
@@ -169,26 +178,60 @@ void MainWindow::BestPath_aux(vector<char> *Bestpath,int *Best,vector<char> *pat
             if (is_not_on_path(node,path)){
                 updateTemp(lista[i],Temp);
                 if (node == target ){
-                (*path).push_back(target);
-                 updateMin(Bestpath,Best,path,Temp);
+                    (*path).push_back(target);
+                    change_to_yellow(node);
+                    Sleep(1000);
+                    updateMin(Bestpath,Best,path,Temp);
+                    change_to_blue(target);
+
                 }
                 else{
+                    change_to_yellow(node);
+                    Sleep(1000);
                     BestPath_aux(Bestpath,Best,path,Temp,node,target);
                 }
             }
         }
     }(*path).pop_back();
+    change_to_blue(source);
+    Sleep(1000);
 }
 
+void MainWindow::change_to_yellow(char c){
+    int n =  (*Grafo).getnodePos(c);
+
+    nodesG[n]->setBrush(Qt::yellow);
+
+}
+
+void MainWindow::change_to_blue(char c){
+
+   int n =  (*Grafo).getnodePos(c);
+
+   nodesG[n]->setBrush(Qt::blue);
+
+}
 
 void MainWindow::on_pushButton_clicked()
 {
-   // CreateGraph(6);
+    CreateGraph(6);
+    createGrafic();
+    BestPath('a','f');
 
-   // BestPath('a','f');
-   // paint();
+}
 
+
+
+void MainWindow::on_Crear_Grafo_clicked()
+{
+
+    CreateGraph(stoi(ui->n_grafo->text().toStdString()));
     createGrafic();
 }
 
+
+void MainWindow::on_Buscar_Ruta_clicked()
+{
+    BestPath((ui->SourceG->text().toStdString())[0],(ui->TargetG->text().toStdString())[0]);
+}
 
