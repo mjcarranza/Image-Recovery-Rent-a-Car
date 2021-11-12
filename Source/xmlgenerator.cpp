@@ -17,8 +17,8 @@ void xmlgenerator::newIndividual(int r, int g, int b){
 
 }
 void xmlgenerator::pushPopulation(){
-    string directory = "bal.xml";
-    //string directory = "population"+to_string(pop_number)+".xml";
+    
+    string directory = "population"+to_string(pop_number)+".xml";
     currPopulation.SaveFile(directory.c_str());
     population_root->Clear();
     pop_number++;

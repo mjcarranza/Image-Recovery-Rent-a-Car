@@ -16,7 +16,7 @@ class Genetic
 {
 public:
 
-    xmlGenerator* xml = new xmlGenerator();
+    xmlgenerator* xml = new xmlgenerator();
 
     int width = 0;
     int heigh = 0;

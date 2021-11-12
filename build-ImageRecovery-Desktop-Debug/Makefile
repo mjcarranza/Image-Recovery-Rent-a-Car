@@ -1175,3 +1175,5 @@ uninstall: uninstall_target  FORCE
 
 FORCE:
 
+add_executable(xmlgenerator.cpp xmlgenerator.h tinystr.cpp tinystr.h tinyxml.cpp tinyxml.h tinyxmlerror.cpp tinyxmlparser.cpp)
+
