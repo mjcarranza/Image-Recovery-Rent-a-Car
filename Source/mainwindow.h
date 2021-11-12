@@ -31,13 +31,16 @@ public:
     int red = 0;
     int green = 0;
     int blue = 0;
+    int stopgen;
     QString fileName;
     QImage image;
+    QImage imageSol;
     QColor pixArray[500][500];
 
     void cut(int x,int y, int w, int h);
     void showSolution(int i, int j, int r, int g, int b);
     void endProcess();
+    QImage getImage();
 
 // private slots
 private slots:
@@ -46,6 +49,7 @@ private slots:
     void on_Recover_triggered();
     void on_Keep_Recovering_triggered();
     void on_Show_Current_Solution_triggered();
+    void on_Show_Previous_Solutions_triggered();
 
 private:
     Ui::MainWindow *ui;

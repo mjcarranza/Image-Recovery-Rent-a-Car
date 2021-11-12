@@ -1,6 +1,7 @@
 #include "Genetic.h"
 #include "mainwindow.h"
 
+
 /**
  * @brief Genetic::GeneratePopulation function to create a generation
  * @param w X dimention of the needed population
@@ -18,7 +19,6 @@ void Genetic::GeneratePopulation(int w, int h)
             int rand2 = randomNumber();
             int rand3 = randomNumber();
             colorArray[i][j]= QColor(rand1,rand2,rand3);
-            cout<<"suma de colores "<<rand1+rand2+rand3<<endl;
         }
     }
     Fitness();
@@ -28,14 +28,11 @@ void Genetic::GeneratePopulation(int w, int h)
  */
 void Genetic::Fitness()
 {
+
     MainWindow mainw;
-    stop = 1000;
     while (stop > 0) {
         stop--;
-        // mostrar o guardar la poblacion actual y generar el XML
-        cout<< "ALGORITHM RUNNING!!!!"<< endl;
         for (int i=0; i<width; i++){
-            cout<<"calculando fitness"<< endl;
             for (int j=0; j<heigh; j++){
                 sumaColor = colorArray[i][j].red() + colorArray[i][j].green() + colorArray[i][j].blue();
                 sumaIdeal = ideal[i][j].red() + ideal[i][j].green() + ideal[i][j].blue();
@@ -211,20 +208,36 @@ int Genetic::randomNumber()
        return 1+rand() % (2);
    }
 }
-
+/**
+ * @brief Genetic::fillIdeal Function to get the cutted area
+ * @param i Position in X axis
+ * @param j Position in Y axis
+ * @param r Value for red color
+ * @param g Value for green color
+ * @param b Value for blue color
+ */
 void Genetic::fillIdeal(int i, int j, int r, int g, int b)
 {
     ideal[i][j] = QColor(r,g,b);
-    cout<< "Color ideal> ("<<ideal[i][j].red()<<", "<<ideal[i][j].green()<<", "<<ideal[i][j].blue()<<")"<<endl;
 }
 
-
+/**
+ * @brief Genetic::keepRunnig Resume the algorithm
+ */
 void Genetic::keepRunnig()
 {
     stop = false;
     Fitness();
 }
-
+/**
+ * @brief Genetic::finalResult Gets the values of the best generation
+ * @param i Position in X axis
+ * @param j Position in Y axis
+ * @param r Value for red color
+ * @param g Value for green color
+ * @param b Value for blue color
+ * @return red, green or blue value
+ */
 int Genetic::finalResult(int i, int j, int r, int g, int b)
 {
     int redVal = colorArray[i][j].red();
@@ -239,4 +252,9 @@ int Genetic::finalResult(int i, int j, int r, int g, int b)
     else {
         return blueVal;
     }
+}
+
+void Genetic::setStopGen(int stp)
+{
+    this->stop = stp;
 }

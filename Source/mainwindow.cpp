@@ -40,7 +40,7 @@ void MainWindow::cut(int x, int y, int w, int h)
                 // get erased pixel colors (rgb)
                 QColor clrCurrent( image.pixel( i, j ) );
                 pixArray[row][col] = clrCurrent;
-                cout<<"("<<pixArray[row][col].red()<<", "<<pixArray[row][col].green()<<", "<<pixArray[row][col].blue()<<")"<<endl;
+                //cout<<"("<<pixArray[row][col].red()<<", "<<pixArray[row][col].green()<<", "<<pixArray[row][col].blue()<<")"<<endl;
 
                 // set white color to pixel
                 image.setPixel(i, j, qRgb(255,255,255));
@@ -56,7 +56,14 @@ void MainWindow::cut(int x, int y, int w, int h)
     scene->addPixmap(QPixmap::fromImage(image));
     ui->graphicsView->setScene(scene);
 }
-
+/**
+ * @brief MainWindow::showSolution Shows the genrated solution
+ * @param i Position in X axis
+ * @param j Position in Y axis
+ * @param r Value for red color
+ * @param g Value for green color
+ * @param b Value for blue color
+ */
 void MainWindow::showSolution(int i, int j, int r, int g, int b)
 {
     red = r;
@@ -80,6 +87,14 @@ void MainWindow::endProcess()
     msg->setText("Process Finished!");
     msg->show();
 
+}
+/**
+ * @brief MainWindow::getImage Returns the image solution
+ * @return Solution
+ */
+QImage MainWindow::getImage()
+{
+    return imageSol;
 }
 /**
  * @brief MainWindow::on_Open_triggered open an image
@@ -111,12 +126,14 @@ void MainWindow::on_Cut_triggered()
     QString yline = ui->ylineEdit->text();
     QString wline = ui->wlineEdit->text();
     QString hline = ui->hlineEdit->text();
+    QString stpline = ui->stplineEdit->text();
 
     // convert text to string data type
     string xstr = xline.toStdString();
     string ystr = yline.toStdString();
     string wstr = wline.toStdString();
     string hstr = hline.toStdString();
+    string stpstr = stpline.toStdString();
 
     // creating a QMessageBox for warning
     msg = new QMessageBox();
@@ -141,6 +158,10 @@ void MainWindow::on_Cut_triggered()
         msg->setText("High Cutting Value Required!");
         msg->show();
     }
+    else if(stpstr==""){
+        msg->setText("Stop Generation Required!");
+        msg->show();
+    }
     else{
         // convert to integer data type
         xPos = stoi(xstr);
@@ -149,6 +170,8 @@ void MainWindow::on_Cut_triggered()
         width = w;
         int h = stoi(hstr);
         heigh = h;
+        int stpg = stoi(stpstr);
+        stopgen = stpg;
 
         // save width and heigh cutting values
         width = w;
@@ -168,6 +191,7 @@ void MainWindow::on_Cut_triggered()
             ui->ylineEdit->setText("");
             ui->wlineEdit->setText("");
             ui->hlineEdit->setText("");
+            ui->stplineEdit->setText("");
 
             // send data to main window
             cut(xPos,yPos,w,h);
@@ -181,8 +205,7 @@ void MainWindow::on_Cut_triggered()
 void MainWindow::on_Recover_triggered()
 {
     // generate population
-    cout<<xPos<<","<<yPos<<endl;
-    gen = new Genetic(width, heigh, xPos, yPos);
+    gen = new Genetic(width, heigh, xPos, yPos, stopgen);
 
     // call genetic class
     for (int i=0; i<width; i++){
@@ -195,27 +218,22 @@ void MainWindow::on_Recover_triggered()
 }
 
 
-
+/**
+ * @brief MainWindow::on_Keep_Recovering_triggered Resume the algorithm`s execution
+ */
 void MainWindow::on_Keep_Recovering_triggered()
 {
-    cout<<"activado111";
+    gen->setStopGen(stopgen);
     gen->Fitness();
 }
-
-
-//void MainWindow::on_Current_Solution_triggered()
-//{
-//    cout<<"activado";
-//    QColor clrCurr( image.pixel( 0, 0 ) );
-//    cout<<clrCurr.red();
-//    //gen->finalResult();
-//}
-
-
+/**
+ * @brief MainWindow::on_Show_Current_Solution_triggered Shows the solution
+ */
 void MainWindow::on_Show_Current_Solution_triggered()
 {
     int row = 0;
     int col = 0;
+    imageSol = QImage(width, heigh, QImage::Format_RGB888);
     for (int i=0; i<sizeY; i++) {
         for (int j=0; j<sizeX; j++) {
             if ((i>=xPos) && (i<xPos+width) && (j>=yPos) && (j<yPos+heigh)){
@@ -224,6 +242,7 @@ void MainWindow::on_Show_Current_Solution_triggered()
                 int greenVal = gen->finalResult(row,col,0,1,0);
                 int blueVal = gen->finalResult(row,col,0,0,1);
                 image.setPixel(i, j, qRgb(redVal,greenVal,blueVal));
+                imageSol.setPixel(row, col, qRgb(redVal,greenVal,blueVal));
                 col ++;
             }
             if ((i>=xPos) && (i<xPos+width) && (j==yPos+heigh)){
@@ -232,8 +251,19 @@ void MainWindow::on_Show_Current_Solution_triggered()
         }
         col = 0;
     }
+
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->addPixmap(QPixmap::fromImage(image));
     ui->graphicsView->setScene(scene);
+}
+
+/**
+ * @brief MainWindow::on_Show_Previous_Solutions_triggered
+ */
+void MainWindow::on_Show_Previous_Solutions_triggered()
+{
+    QGraphicsScene *scene = new QGraphicsScene(this);
+    scene->addPixmap(QPixmap::fromImage(imageSol));
+    ui->solGraphicsView->setScene(scene);
 }
 
