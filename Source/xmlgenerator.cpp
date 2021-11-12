@@ -2,5 +2,5 @@
 
 xmlGenerator::xmlGenerator()
 {
-
+    
 }
