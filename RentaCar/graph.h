@@ -7,6 +7,7 @@
 #include <stdio.h>      /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
+#include <iostream>
 using namespace std;
 class graph
 {
@@ -18,10 +19,11 @@ public:
     vector<char> nodes;
 
     void createNodes(int);
-    void createEdges( int);
-    void generateMatriz( int);
+    void createEdgesAndMatriz(int);
     vector<int> getRelationof(char);
     int getposNode(char );
+    char getnodePos(int);
+    bool relationNotExist(int, int );
 
 
 };
