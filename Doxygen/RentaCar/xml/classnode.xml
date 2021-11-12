@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classnode" kind="class" language="C++" prot="public">
+    <compoundname>node</compoundname>
+    <includes refid="node_8h" local="no">node.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnode_1a82669b7358b50bd8d7888d7df4ff8dfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>node::node</definition>
+        <argsstring>()</argsstring>
+        <name>node</name>
+        <briefdescription>
+<para>creacion de nodos </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/node.h" line="8" column="5" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/node.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/node.h" line="5" column="1" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/node.h" bodystart="6" bodyend="9"/>
+    <listofallmembers>
+      <member refid="classnode_1a82669b7358b50bd8d7888d7df4ff8dfa" prot="public" virt="non-virtual"><scope>node</scope><name>node</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

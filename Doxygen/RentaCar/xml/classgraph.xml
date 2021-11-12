@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classgraph" kind="class" language="C++" prot="public">
+    <compoundname>graph</compoundname>
+    <includes refid="graph_8h" local="no">graph.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classgraph_1af757fb75d21cce84deb478def1abe3d2" prot="public" static="no" mutable="no">
+        <type>vector&lt; vector&lt; int &gt; &gt;</type>
+        <definition>vector&lt;vector&lt;int&gt; &gt; graph::Matriz</definition>
+        <argsstring></argsstring>
+        <name>Matriz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="17" column="12" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraph_1a3832d0d179ca14c98114098695084b79" prot="public" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classedge" kindref="compound">edge</ref> &gt;</type>
+        <definition>vector&lt;edge&gt; graph::edges</definition>
+        <argsstring></argsstring>
+        <name>edges</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="18" column="12" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgraph_1a6f4a0161035b982a8818fbf330af090a" prot="public" static="no" mutable="no">
+        <type>vector&lt; char &gt;</type>
+        <definition>vector&lt;char&gt; graph::nodes</definition>
+        <argsstring></argsstring>
+        <name>nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="19" column="12" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgraph_1a6aaa56b4528d2fdb8f0ecd97e04f6651" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>graph::graph</definition>
+        <argsstring>()</argsstring>
+        <name>graph</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="15" column="5" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="8" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraph_1aedf9c5ef775bda2722e72bdb47d34063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>graph::graph</definition>
+        <argsstring>(int)</argsstring>
+        <name>graph</name>
+        <param>
+          <type>int</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="16" column="5" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="10" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraph_1a12851922524f99c949e258ce97f21ec0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graph::createNodes</definition>
+        <argsstring>(int)</argsstring>
+        <name>createNodes</name>
+        <param>
+          <type>int</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Funcion para la creacion de los nodos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>nodos </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="21" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="23" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraph_1a9daa8e396ef38b313f82d49e9a96fc98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void graph::createEdgesAndMatriz</definition>
+        <argsstring>(int)</argsstring>
+        <name>createEdgesAndMatriz</name>
+        <param>
+          <type>int</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Metodo para la creación de las aristas (edges) y la matriz de relacion correspondientes a las conexiones entre los nodos creados. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>valor del primer numero aleatorio </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>segundo numero almacenado aleatorio </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>valor de almacenamiento aleatorio </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>matriz </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="22" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="43" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraph_1a557d607cb52cdcabd0a2854d1adad322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; int &gt;</type>
+        <definition>vector&lt; int &gt; graph::getRelationof</definition>
+        <argsstring>(char)</argsstring>
+        <name>getRelationof</name>
+        <param>
+          <type>char</type>
+          <defname>node</defname>
+        </param>
+        <briefdescription>
+<para>Funcion que obtiene la relacion existente en cada par de nodos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>dato </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="23" column="12" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraph_1a1afc19267176db488ae91cf48fe3702e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int graph::getposNode</definition>
+        <argsstring>(char)</argsstring>
+        <name>getposNode</name>
+        <param>
+          <type>char</type>
+          <defname>node</defname>
+        </param>
+        <briefdescription>
+<para>Metodo para la obtencion de la posición del nodo. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="24" column="9" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="109" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraph_1a42c938afcdd0a0ff858feae613e25940" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char graph::getnodePos</definition>
+        <argsstring>(int)</argsstring>
+        <name>getnodePos</name>
+        <param>
+          <type>int</type>
+          <defname>pos</defname>
+        </param>
+        <briefdescription>
+<para>Metodo para la optencion de la posicion del nodo. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="25" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="124" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classgraph_1ae8a575819ea1848a4d8abd99bd6a72cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool graph::relationNotExist</definition>
+        <argsstring>(int, int)</argsstring>
+        <name>relationNotExist</name>
+        <param>
+          <type>int</type>
+          <defname>i</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>j</defname>
+        </param>
+        <briefdescription>
+<para>Metodo para la verificación de la existencia de relacion entre dos nodos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>boolean </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="26" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.cpp" bodystart="87" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" line="12" column="1" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/graph.h" bodystart="13" bodyend="29"/>
+    <listofallmembers>
+      <member refid="classgraph_1a9daa8e396ef38b313f82d49e9a96fc98" prot="public" virt="non-virtual"><scope>graph</scope><name>createEdgesAndMatriz</name></member>
+      <member refid="classgraph_1a12851922524f99c949e258ce97f21ec0" prot="public" virt="non-virtual"><scope>graph</scope><name>createNodes</name></member>
+      <member refid="classgraph_1a3832d0d179ca14c98114098695084b79" prot="public" virt="non-virtual"><scope>graph</scope><name>edges</name></member>
+      <member refid="classgraph_1a42c938afcdd0a0ff858feae613e25940" prot="public" virt="non-virtual"><scope>graph</scope><name>getnodePos</name></member>
+      <member refid="classgraph_1a1afc19267176db488ae91cf48fe3702e" prot="public" virt="non-virtual"><scope>graph</scope><name>getposNode</name></member>
+      <member refid="classgraph_1a557d607cb52cdcabd0a2854d1adad322" prot="public" virt="non-virtual"><scope>graph</scope><name>getRelationof</name></member>
+      <member refid="classgraph_1a6aaa56b4528d2fdb8f0ecd97e04f6651" prot="public" virt="non-virtual"><scope>graph</scope><name>graph</name></member>
+      <member refid="classgraph_1aedf9c5ef775bda2722e72bdb47d34063" prot="public" virt="non-virtual"><scope>graph</scope><name>graph</name></member>
+      <member refid="classgraph_1af757fb75d21cce84deb478def1abe3d2" prot="public" virt="non-virtual"><scope>graph</scope><name>Matriz</name></member>
+      <member refid="classgraph_1a6f4a0161035b982a8818fbf330af090a" prot="public" virt="non-virtual"><scope>graph</scope><name>nodes</name></member>
+      <member refid="classgraph_1ae8a575819ea1848a4d8abd99bd6a72cc" prot="public" virt="non-virtual"><scope>graph</scope><name>relationNotExist</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
