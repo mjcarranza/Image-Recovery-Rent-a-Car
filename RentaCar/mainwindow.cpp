@@ -7,6 +7,55 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    scene = new QGraphicsScene(this);
+
+  //  QPushButton *train_button = new QPushButton(this);
+   // train_button->setText(tr("something"));
+   // train_button->move(0, 0);
+  //  setCentralWidget(train_button);
+
+    int DIAMETER = 50;
+
+    int PosX = 0;
+    int PosY = 0;
+    int PosX2 = 250;
+    int PosY2 = 100;
+    QGraphicsEllipseItem *circle = new QGraphicsEllipseItem(PosX , PosY, DIAMETER, DIAMETER);
+   // circle->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
+    circle->setBrush(Qt::green);
+    QGraphicsSimpleTextItem *text = new QGraphicsSimpleTextItem("A",circle);
+    QFont f;
+    f.setPointSize(25);
+    text->setFont(f);
+    text->setPos(15,0);
+
+    cout<<circle->x();
+
+    circle->scenePos();
+
+
+
+    QGraphicsLineItem *path;
+    path = new QGraphicsLineItem;
+    path->setLine (PosX+25, PosY+25,PosX2, PosY2);
+    ui->Lienso->setScene(scene);
+
+    QGraphicsSimpleTextItem *peso = new QGraphicsSimpleTextItem("30");
+    QFont fv;
+    fv.setPointSize(15);
+    peso->setFont(fv);
+    peso->setPos((PosX+25+PosX2)/2,(PosY+25+PosY2)/2);
+
+    scene->addItem(path);
+
+    scene->addItem(circle);
+
+    scene->addItem(peso);
+
+
+
+
+
 
 
 
@@ -17,8 +66,48 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
+void MainWindow::createGrafic(){
+    int PosX;
+    int PosY;
+    int DIAMETER = 50;
+    int n = 500;
+    QString x;
+    QChar y;
+  //  QGraphicsEllipseItem *circle;
+    QGraphicsSimpleTextItem *text;
+    for(int i = 0; i< (*Grafo).nodes.size(); i++){
+        PosX = (rand() % ( n ));
+        PosY = (rand() % ( n ));
+        this->nodesG.push_back(new QGraphicsEllipseItem(PosX , PosY, DIAMETER, DIAMETER));
+        nodesG[i]->setBrush(Qt::green);
+
+        x="";
+        y=(*Grafo).nodes[i];
+        x+=y;
+
+
+        text = new QGraphicsSimpleTextItem(x,nodesG[i]);
+        QFont f;
+        f.setPointSize(25);
+        text->setFont(f);
+        text->setPos(15,0);
+
+
+        scene->addItem(nodesG[i]);
+
+    }
+
+
+
+}
+
+
+
 void MainWindow::CreateGraph(int n){
-Grafo = new graph(n);
+//Grafo = new graph(n);
+
 
 
 //createGafic(&Grafo);
@@ -94,8 +183,12 @@ void MainWindow::BestPath_aux(vector<char> *Bestpath,int *Best,vector<char> *pat
 
 void MainWindow::on_pushButton_clicked()
 {
-    CreateGraph(6);
+   // CreateGraph(6);
 
-    BestPath('a','f');
+   // BestPath('a','f');
+   // paint();
+
+    createGrafic();
 }
+
 
