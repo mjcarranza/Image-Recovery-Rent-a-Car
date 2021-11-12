@@ -35,6 +35,7 @@ public:
     QAction *Recover;
     QAction *Keep_Recovering;
     QAction *Show_Current_Solution;
+    QAction *Show_Previous_Solutions;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QGraphicsView *graphicsView;
@@ -43,16 +44,20 @@ public:
     QLabel *label_5;
     QSpacerItem *horizontalSpacer_4;
     QGridLayout *gridLayout;
-    QLabel *label_2;
-    QLabel *label_4;
-    QLineEdit *wlineEdit;
-    QLineEdit *ylineEdit;
     QLineEdit *hlineEdit;
-    QLabel *label_3;
-    QSpacerItem *horizontalSpacer_2;
-    QLineEdit *xlineEdit;
     QSpacerItem *horizontalSpacer;
+    QSpacerItem *horizontalSpacer_2;
+    QLineEdit *wlineEdit;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLineEdit *xlineEdit;
+    QLineEdit *ylineEdit;
     QLabel *label;
+    QLabel *label_4;
+    QLabel *label_6;
+    QLineEdit *stplineEdit;
+    QLabel *label_7;
+    QGraphicsView *solGraphicsView;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -62,8 +67,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(695, 675);
-        MainWindow->setMaximumSize(QSize(700, 675));
+        MainWindow->resize(695, 950);
+        MainWindow->setMaximumSize(QSize(700, 950));
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(136, 138, 133);"));
         Open = new QAction(MainWindow);
         Open->setObjectName(QString::fromUtf8("Open"));
@@ -77,6 +82,8 @@ public:
         Keep_Recovering->setObjectName(QString::fromUtf8("Keep_Recovering"));
         Show_Current_Solution = new QAction(MainWindow);
         Show_Current_Solution->setObjectName(QString::fromUtf8("Show_Current_Solution"));
+        Show_Previous_Solutions = new QAction(MainWindow);
+        Show_Previous_Solutions->setObjectName(QString::fromUtf8("Show_Previous_Solutions"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -111,19 +118,19 @@ public:
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setStyleSheet(QString::fromUtf8("font: 57 15pt \"aakar\";\n"
-"color: rgb(0, 0, 0);"));
+        hlineEdit = new QLineEdit(centralwidget);
+        hlineEdit->setObjectName(QString::fromUtf8("hlineEdit"));
+        hlineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        gridLayout->addWidget(label_2, 1, 1, 1, 1);
+        gridLayout->addWidget(hlineEdit, 3, 3, 1, 1);
 
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setStyleSheet(QString::fromUtf8("font: 57 15pt \"aakar\";\n"
-"color: rgb(0, 0, 0);"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addWidget(label_4, 3, 1, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 1, 0, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 1, 4, 1, 1);
 
         wlineEdit = new QLineEdit(centralwidget);
         wlineEdit->setObjectName(QString::fromUtf8("wlineEdit"));
@@ -131,17 +138,12 @@ public:
 
         gridLayout->addWidget(wlineEdit, 2, 3, 1, 1);
 
-        ylineEdit = new QLineEdit(centralwidget);
-        ylineEdit->setObjectName(QString::fromUtf8("ylineEdit"));
-        ylineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setStyleSheet(QString::fromUtf8("font: 57 15pt \"aakar\";\n"
+"color: rgb(0, 0, 0);"));
 
-        gridLayout->addWidget(ylineEdit, 1, 3, 1, 1);
-
-        hlineEdit = new QLineEdit(centralwidget);
-        hlineEdit->setObjectName(QString::fromUtf8("hlineEdit"));
-        hlineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(hlineEdit, 3, 3, 1, 1);
+        gridLayout->addWidget(label_2, 1, 1, 1, 1);
 
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -150,19 +152,17 @@ public:
 
         gridLayout->addWidget(label_3, 2, 1, 1, 1);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 1, 4, 1, 1);
-
         xlineEdit = new QLineEdit(centralwidget);
         xlineEdit->setObjectName(QString::fromUtf8("xlineEdit"));
         xlineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(xlineEdit, 0, 3, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        ylineEdit = new QLineEdit(centralwidget);
+        ylineEdit->setObjectName(QString::fromUtf8("ylineEdit"));
+        ylineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        gridLayout->addItem(horizontalSpacer, 1, 0, 1, 1);
+        gridLayout->addWidget(ylineEdit, 1, 3, 1, 1);
 
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
@@ -171,8 +171,41 @@ public:
 
         gridLayout->addWidget(label, 0, 1, 1, 1);
 
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setStyleSheet(QString::fromUtf8("font: 57 15pt \"aakar\";\n"
+"color: rgb(0, 0, 0);"));
+
+        gridLayout->addWidget(label_4, 3, 1, 1, 1);
+
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setStyleSheet(QString::fromUtf8("font: 57 15pt \"aakar\";\n"
+"color: rgb(0, 0, 0);"));
+
+        gridLayout->addWidget(label_6, 4, 1, 1, 1);
+
+        stplineEdit = new QLineEdit(centralwidget);
+        stplineEdit->setObjectName(QString::fromUtf8("stplineEdit"));
+        stplineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        gridLayout->addWidget(stplineEdit, 4, 3, 1, 1);
+
 
         verticalLayout->addLayout(gridLayout);
+
+        label_7 = new QLabel(centralwidget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setStyleSheet(QString::fromUtf8("font: 57 20pt \"aakar\";\n"
+"color: rgb(0, 0, 0);"));
+
+        verticalLayout->addWidget(label_7);
+
+        solGraphicsView = new QGraphicsView(centralwidget);
+        solGraphicsView->setObjectName(QString::fromUtf8("solGraphicsView"));
+        solGraphicsView->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        verticalLayout->addWidget(solGraphicsView);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -195,6 +228,7 @@ public:
         menuTools->addAction(Recover);
         menuTools->addAction(Keep_Recovering);
         menuTools->addAction(Show_Current_Solution);
+        menuTools->addAction(Show_Previous_Solutions);
 
         retranslateUi(MainWindow);
 
@@ -210,11 +244,14 @@ public:
         Recover->setText(QCoreApplication::translate("MainWindow", "Recover", nullptr));
         Keep_Recovering->setText(QCoreApplication::translate("MainWindow", "Keep Recovering", nullptr));
         Show_Current_Solution->setText(QCoreApplication::translate("MainWindow", "Show Current Solution", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "CUTTING DIMENTIONS:", nullptr));
+        Show_Previous_Solutions->setText(QCoreApplication::translate("MainWindow", "Show Previous Solutions", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "CUTTING DIMENSIONS:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Position Y", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "High", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Width", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Position X", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "High", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "Stop Generation", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "Previous Generations:", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuTools->setTitle(QCoreApplication::translate("MainWindow", "Tools", nullptr));

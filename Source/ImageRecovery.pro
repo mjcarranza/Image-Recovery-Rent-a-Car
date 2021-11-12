@@ -12,18 +12,15 @@ SOURCES += \
     Genetic.cpp \
     main.cpp \
     mainwindow.cpp \
-    showgen.cpp \
     xmlgenerator.cpp
 
 HEADERS += \
     Genetic.h \
     mainwindow.h \
-    showgen.h \
     xmlgenerator.h
 
 FORMS += \
-    mainwindow.ui \
-    showgen.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
