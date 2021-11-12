@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classedge" kind="class" language="C++" prot="public">
+    <compoundname>edge</compoundname>
+    <includes refid="edge_8h" local="no">edge.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classedge_1a6a5545ecbe67c2bc6a243b564f3f544e" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char edge::SnodeName</definition>
+        <argsstring></argsstring>
+        <name>SnodeName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" line="12" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classedge_1a89f976f709864b6f35a5e3cbf9ebcf37" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char edge::TnodeName</definition>
+        <argsstring></argsstring>
+        <name>TnodeName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" line="13" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classedge_1a9e7393c8cb9859cccb993e3191a02c97" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int edge::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" line="14" column="9" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classedge_1ac8047a0d7c1e08a4063be409c6fd0a88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>edge::edge</definition>
+        <argsstring>()</argsstring>
+        <name>edge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" line="10" column="5" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classedge_1af99ff0deb7056e1d53f36f07ed5cc771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>edge::edge</definition>
+        <argsstring>(char, char, int)</argsstring>
+        <name>edge</name>
+        <param>
+          <type>char</type>
+          <defname>snodename</defname>
+        </param>
+        <param>
+          <type>char</type>
+          <defname>tnodename</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+<para>funcion para la definición del objeto de tipo edge </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" line="11" column="5" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.cpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" line="7" column="1" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/edge.h" bodystart="8" bodyend="18"/>
+    <listofallmembers>
+      <member refid="classedge_1ac8047a0d7c1e08a4063be409c6fd0a88" prot="public" virt="non-virtual"><scope>edge</scope><name>edge</name></member>
+      <member refid="classedge_1af99ff0deb7056e1d53f36f07ed5cc771" prot="public" virt="non-virtual"><scope>edge</scope><name>edge</name></member>
+      <member refid="classedge_1a6a5545ecbe67c2bc6a243b564f3f544e" prot="public" virt="non-virtual"><scope>edge</scope><name>SnodeName</name></member>
+      <member refid="classedge_1a89f976f709864b6f35a5e3cbf9ebcf37" prot="public" virt="non-virtual"><scope>edge</scope><name>TnodeName</name></member>
+      <member refid="classedge_1a9e7393c8cb9859cccb993e3191a02c97" prot="public" virt="non-virtual"><scope>edge</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

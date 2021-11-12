@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="class_main_window" kind="class" language="C++" prot="public">
+    <compoundname>MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="mainwindow_8h" local="no">mainwindow.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_main_window_1ae9e1a36eee8233b1019b63627d78a15a" prot="public" static="no" mutable="no">
+        <type><ref refid="classgraph" kindref="compound">graph</ref> *</type>
+        <definition>graph* MainWindow::Grafo</definition>
+        <argsstring></argsstring>
+        <name>Grafo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="24" column="11" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a5a1d0a0383cda7a78fb8cd68d460d31f" prot="public" static="no" mutable="no">
+        <type>vector&lt; QGraphicsEllipseItem * &gt;</type>
+        <definition>vector&lt;QGraphicsEllipseItem*&gt; MainWindow::nodesG</definition>
+        <argsstring></argsstring>
+        <name>nodesG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="25" column="11" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a51ac2b126495216832501cea3929c6f6" prot="public" static="no" mutable="no">
+        <type>QGraphicsScene *</type>
+        <definition>QGraphicsScene* MainWindow::scene</definition>
+        <argsstring></argsstring>
+        <name>scene</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="32" column="20" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="private" static="no" mutable="no">
+        <type>Ui::MainWindow *</type>
+        <definition>Ui::MainWindow* MainWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="40" column="20" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_main_window_1a996c5a2b6f77944776856f08ec30858d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::MainWindow</definition>
+        <argsstring>(QWidget *parent=nullptr)</argsstring>
+        <name>MainWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="22" column="5" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="9" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::~MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="23" column="5" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1accec293a3be14f302ccd56f8abcde3b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::CreateGraph</definition>
+        <argsstring>(int)</argsstring>
+        <name>CreateGraph</name>
+        <param>
+          <type>int</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Creacion del objeto tipo &quot;graph&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="26" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="121" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ab40bcebd5f165a4737dd36293cfe6747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MainWindow::is_not_on_path</definition>
+        <argsstring>(char, vector&lt; char &gt; *)</argsstring>
+        <name>is_not_on_path</name>
+        <param>
+          <type>char</type>
+          <defname>node</defname>
+        </param>
+        <param>
+          <type>vector&lt; char &gt; *</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_main_window_1ab40bcebd5f165a4737dd36293cfe6747" kindref="member">is_not_on_path()</ref> verifica que el nodo no se hubiera registrado antes para evitar ciclos </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>corresponde al nodo registrado anteriormente </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="27" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="135" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a28fffebeacc62106d74a3d8745b03df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateTemp</definition>
+        <argsstring>(int, int *)</argsstring>
+        <name>updateTemp</name>
+        <param>
+          <type>int</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>int *</type>
+          <defname>Temp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="28" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="180" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a5d3f5c97ac22ff713d11883f23351e95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::BestPath_aux</definition>
+        <argsstring>(vector&lt; char &gt; *, int *, vector&lt; char &gt; *, int *, char, char)</argsstring>
+        <name>BestPath_aux</name>
+        <param>
+          <type>vector&lt; char &gt; *</type>
+          <defname>Bestpath</defname>
+        </param>
+        <param>
+          <type>int *</type>
+          <defname>Best</defname>
+        </param>
+        <param>
+          <type>vector&lt; char &gt; *</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>int *</type>
+          <defname>Temp</defname>
+        </param>
+        <param>
+          <type>char</type>
+          <defname>source</defname>
+        </param>
+        <param>
+          <type>char</type>
+          <defname>target</defname>
+        </param>
+        <briefdescription>
+<para>funcion auxiliar para la seleccion de la meor ruta, verifica las rutas optando por la de menos peso </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="29" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="192" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a6bac9f912056a2e5c92b2b73c687e956" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::BestPath</definition>
+        <argsstring>(char, char)</argsstring>
+        <name>BestPath</name>
+        <param>
+          <type>char</type>
+          <defname>source</defname>
+        </param>
+        <param>
+          <type>char</type>
+          <defname>target</defname>
+        </param>
+        <briefdescription>
+<para>Función que selecciona la mejor seleccion de los nodos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>nodos </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="30" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="149" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a81281e9e2e512ba978b32570df77450d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::createGrafic</definition>
+        <argsstring>()</argsstring>
+        <name>createGrafic</name>
+        <briefdescription>
+<para>Defincion de las dimensiones y las variables de posición para los nodos del grafo con valores aleatorios. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>DIAMETER</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>medida fija para el diametro de cada nodo </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PosX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y PosY corresponden las posiciones que tendrán cada nodo de forma aleatoria </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="31" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="81" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_main_window_1a4de79c63c7fa0b8d7c468ac71f20be81" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_pushButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_pushButton_clicked</name>
+        <briefdescription>
+<para>funcion para la deteccion de click en el boton para generar el grafo </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="37" column="10" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.cpp" bodystart="219" bodyend="227"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Grafo</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+      <node id="3">
+        <label>graph</label>
+        <link refid="classgraph"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" line="17" column="1" bodyfile="C:/Users/isoto/Documents/Progra/RentAcar/Image-Recovery-Rent-a-Car/RentaCar/mainwindow.h" bodystart="18" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_main_window_1a6bac9f912056a2e5c92b2b73c687e956" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>BestPath</name></member>
+      <member refid="class_main_window_1a5d3f5c97ac22ff713d11883f23351e95" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>BestPath_aux</name></member>
+      <member refid="class_main_window_1a81281e9e2e512ba978b32570df77450d" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>createGrafic</name></member>
+      <member refid="class_main_window_1accec293a3be14f302ccd56f8abcde3b9" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>CreateGraph</name></member>
+      <member refid="class_main_window_1ae9e1a36eee8233b1019b63627d78a15a" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>Grafo</name></member>
+      <member refid="class_main_window_1ab40bcebd5f165a4737dd36293cfe6747" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>is_not_on_path</name></member>
+      <member refid="class_main_window_1a996c5a2b6f77944776856f08ec30858d" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>MainWindow</name></member>
+      <member refid="class_main_window_1a5a1d0a0383cda7a78fb8cd68d460d31f" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>nodesG</name></member>
+      <member refid="class_main_window_1a4de79c63c7fa0b8d7c468ac71f20be81" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_pushButton_clicked</name></member>
+      <member refid="class_main_window_1a51ac2b126495216832501cea3929c6f6" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>scene</name></member>
+      <member refid="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ui</name></member>
+      <member refid="class_main_window_1a28fffebeacc62106d74a3d8745b03df3" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>updateTemp</name></member>
+      <member refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
