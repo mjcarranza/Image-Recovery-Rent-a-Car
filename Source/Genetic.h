@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QColor>
 #include <cmath>
+#include "xmlgenerator.h"
 using namespace std;
 
 /**
@@ -12,6 +13,7 @@ using namespace std;
 class Genetic
 {
 public:
+    xmlGenerator* xml = new xmlGenerator();
     int width = 0;
     int heigh = 0;
     int xPos = 0;

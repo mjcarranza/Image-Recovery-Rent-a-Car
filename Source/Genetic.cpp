@@ -40,8 +40,10 @@ void Genetic::Fitness()
                 sumaColor = colorArray[i][j].red() + colorArray[i][j].green() + colorArray[i][j].blue();
                 sumaIdeal = ideal[i][j].red() + ideal[i][j].green() + ideal[i][j].blue();
                 fitness[i][j] = abs(sumaColor - sumaIdeal);
+                xml->newIndividual(colorArray[i][j].red(), colorArray[i][j].green(),colorArray[i][j].blue());
             }
         }
+        xml->pushPopulation();
         Select();
         // Evaluate if the current population is a solution
     }
